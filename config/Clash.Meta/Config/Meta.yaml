@@ -324,7 +324,7 @@ rules:
   - GEOSITE,google,Google
   - GEOSITE,telegram,Telegram
   - GEOSITE,CN,国内
-  - GEOSITE,geolocation-!cn,默认
+  #- GEOSITE,geolocation-!cn,默认
 
   - GEOIP,google,Google
   - GEOIP,telegram,Telegram
