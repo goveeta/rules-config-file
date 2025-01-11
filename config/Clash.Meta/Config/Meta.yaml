@@ -10,7 +10,7 @@ proxy-providers:
       interval: 300
     
 proxies: 
-  - name: "🌐直连"
+  - name: "直连"
     type: direct
 
 mixed-port: 7890
@@ -68,6 +68,7 @@ dns:
   enable: true
   ipv6: false
   respect-rules: true
+  enhanced-mode: fake-ip
   fake-ip-filter:
     - "*"
     - "+.lan"
@@ -89,154 +90,103 @@ dns:
 
 proxy-groups:
 
-  - name: 🚀策略选择
+  - name: 默认
     type: select
-    proxies: [♻️自动,🇭🇰香港,🇹🇼台湾,🇸🇬新加坡,🇺🇸美国,🇩🇪德国,全部节点,🌐直连]
-  
-  # 策略组
-  - name: 🚀策略选择
-    type: select
-    proxies: [♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+    proxies: [自动选择,香港,台湾,日本,新加坡,美国,全部节点,直连]
 
-# 兜底策略组
-  - name: 🐟漏网之鱼
+  - name: Google
     type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+    proxies: [默认,香港,台湾,日本,新加坡,美国,全部节点,自动选择,直连]
 
-# 专用策略组
-  - name: 🤖️人工智能
+  - name: Telegram
     type: select
-    proxies: [🚀策略选择,🌐直连,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+    proxies: [默认,香港,台湾,日本,新加坡,美国,全部节点,自动选择,直连]
 
-# 下载服务
-  - name: 📦下载
+  - name: Twitter
     type: select
-    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+    proxies: [默认,香港,台湾,日本,新加坡,美国,全部节点,自动选择,直连]
 
-# 苹果服务
-  - name: 🍎苹果服务
+  - name: YouTube
     type: select
-    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+    proxies: [默认,香港,台湾,日本,新加坡,美国,全部节点,自动选择,直连]
 
-# 微软服务
-  - name: Ⓜ️微软服务
+  - name: Github
     type: select
-    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+    proxies:  [默认,香港,台湾,日本,新加坡,美国,全部节点,自动选择,直连]
 
-# 支付平台
-  - name: 💳Paypal
+  - name: OpenAI
     type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+    proxies:  [默认,台湾,日本,新加坡,美国]
 
-# 社交通讯平台
-  - name: 🐦Discord
+  - name: Microsoft
     type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
-  - name: 👤Facebook
-    type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
-  - name: 📖Reddit
-    type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
-  - name: 📲Telegram
-    type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
-  - name: 📄Twitter
-    type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+    proxies:  [默认,香港,台湾,日本,新加坡,美国,全部节点,自动选择,直连]
 
-# 娱乐平台
-  - name: 🎮全球游戏
+  - name: 国内
     type: select
-    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+    proxies:  [直连,默认,香港,台湾,日本,新加坡,美国,全部节点,自动选择]
 
-# 流媒体服务
-  - name: 🎬Disney+
+  - name: 其他
     type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
-  - name: 🎥Netflix
-    type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
-  - name: 📹YouTube
-    type: select
-    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
-  - name: 📽BiliBili
-    type: select
-    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国]
+    proxies:  [默认,香港,台湾,日本,新加坡,美国,全部节点,自动选择,直连]
 
-# 拒绝策略
-  - name: 🚫拒绝
-    type: select
-    proxies: [REJECT,REJECT-DROP]
-  - name: 🌐直连
-    type: select
-    proxies: [DIRECT]
 
   #分隔,下面是地区分组
-  - name: 🇭🇰香港
+  - name: 香港
     type: url-test
     use:
       - ProviderAirPort
-    filter: "(?i)🇭🇰香港|hk|🇭🇰|香港"
+    filter: "(?i)港|hk|hongkong|hong kong"
     url: 'http://www.apple.com/library/test/success.html'
     interval: 300
     tolerance: 50
     #lazy: true
           
-  - name: 🇹🇼台湾
+  - name: 台湾
     type: url-test
     use:
       - ProviderAirPort
-    filter: "🇹🇼台湾|tw|🇹🇼|台湾"
+    filter: "(?i)台|tw|taiwan"
     url: 'http://www.apple.com/library/test/success.html'
     interval: 300
     tolerance: 50
     #lazy: true    
 
-  # - name: 日本
-  #   type: url-test
-  #   use:
-  #     - ProviderAirPort
-  #   filter: "(?i)日本|jp|japan"
-  #   url: 'http://www.apple.com/library/test/success.html'
-  #   interval: 300
-  #   tolerance: 50
-    #lazy: true    
-
-  - name: 🇺🇸美国
+  - name: 日本
     type: url-test
     use:
       - ProviderAirPort
-    filter: "(?i)🇺🇸美国|us|🇺🇸|美国"
+    filter: "(?i)日本|jp|japan"
     url: 'http://www.apple.com/library/test/success.html'
     interval: 300
     tolerance: 50
     #lazy: true    
 
-  - name: 🇸🇬新加坡
+  - name: 美国
     type: url-test
     use:
       - ProviderAirPort
-    filter: "(?i)(🇸🇬新加坡|sg|🇸🇬|新加坡)"
+    filter: "(?i)美|us|unitedstates|united states"
     url: 'http://www.apple.com/library/test/success.html'
     interval: 300
     tolerance: 50
     #lazy: true    
 
-  - name: 🇸🇬德国
+  - name: 新加坡
     type: url-test
     use:
       - ProviderAirPort
-    filter: "(?i)(🇩🇪德国|de|🇩🇪|德国)"
+    filter: "(?i)(新|sg|singapore)"
     url: 'http://www.apple.com/library/test/success.html'
     interval: 300
     tolerance: 50
-    
+    #lazy: true    
+
   - name: 全部节点
     type: select
     include-all: true
 
-  - name: ♻️自动
+  - name: 自动选择
     type: url-test
     include-all: true
     exclude-type: "direct"
@@ -244,179 +194,140 @@ proxy-groups:
     interval: 300
     tolerance: 10
 
-CN1:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_No_IPv6.yaml"
+rule-providers:
+  private_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.list"
+  cn_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.list"
+  github_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.list"
+  twitter_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.list"
+  youtube_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list"
+  google_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.list"
+  telegram_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list"
+  openai_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.list"    
+  microsoft_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.list"      
+  geolocation-!cn:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list"
+  gfw_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.list"         
 
-CN2:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_Domain.yaml"
-
-Lan:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Lan/Lan.yaml"
-
-Proxy1:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Proxy/Proxy.yaml"
-
-Proxy2:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Proxy/Proxy_Domain.yaml"
-
-Download:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Download/Download.yaml"
-
-ArtificialIntelligence:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/OpenAI/OpenAI.yaml"
-
-AppleServices1:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Apple/Apple.yaml"
-
-AppleServices2:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Apple/Apple_Domain.yaml"
-
-Microsoft:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Microsoft/Microsoft.yaml"
-
-GoogleServices:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Google/Google.yaml"
-
-Paypal:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/PayPal/PayPal.yaml"
-
-Discord:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Discord/Discord.yaml"
-
-Facebook:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Facebook/Facebook.yaml"
-
-Reddit:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Reddit/Reddit.yaml"
-
-Telegeam:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Telegram/Telegram.yaml"
-
-Twitter:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Twitter/Twitter.yaml"
-
-GlobalGames:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Game/Game.yaml"
-
-YouTubeMusic:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/YouTubeMusic/YouTubeMusic.yaml"
-
-Disney:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Disney/Disney.yaml"
-
-Netflix:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Netflix/Netflix.yaml"
-
-Youtube:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/YouTube/YouTube.yaml"
-
-BiliBili:
-  type: http
-  interval: 86400
-  behavior: classical
-  url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"
+  private_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr 
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.list"
+  cn_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr 
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.list"
+  google_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr 
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.list"
+  netflix_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr 
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.list"
+  twitter_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr 
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.list"
+  telegram_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr 
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list"
 
 rules:
-  - RULE-SET,CN1,🌐直连
-  - RULE-SET,CN2,🌐直连
-  - RULE-SET,Lan,🌐直连
-  - RULE-SET,Proxy1,🚀策略选择
-  - RULE-SET,Proxy2,🚀策略选择
-  - RULE-SET,Download,📦下载
-  - RULE-SET,ArtificialIntelligence,🤖️人工智能
-  - RULE-SET,AppleServices1,🍎苹果服务
-  - RULE-SET,AppleServices2,🍎苹果服务
-  - RULE-SET,Microsoft,Ⓜ️微软服务
-  - RULE-SET,GoogleServices,🚀策略选择
-  - RULE-SET,Paypal,💳Paypal
-  - RULE-SET,Discord,🐦Discord
-  - RULE-SET,Facebook,👤Facebook
-  - RULE-SET,Reddit,📖Reddit
-  - RULE-SET,Telegeam,📲Telegram
-  - RULE-SET,Twitter,📄Twitter
-  - RULE-SET,GlobalGames,🎮全球游戏
-  - RULE-SET,YouTubeMusic,📹YouTube
-  - RULE-SET,Disney,🎬Disney+
-  - RULE-SET,Netflix,🎥Netflix
-  - RULE-SET,Youtube,📹YouTube
-  - RULE-SET,BiliBili,📽BiliBili
-  - GEOIP,lan,🌐直连,no-resolve
-  - GEOSITE,github,🚀策略选择
-  - GEOSITE,twitter,📄Twitter
-  - GEOSITE,youtube,📹YouTube
-  - GEOSITE,google,🚀策略选择
-  - GEOSITE,telegram,📲Telegram
-  - GEOSITE,CN,🌐直连
-  - GEOSITE,geolocation-!cn,🐟漏网之鱼
+  - RULE-SET,private_ip,直连,no-resolve
+  - RULE-SET,github_domain,Github
+  - RULE-SET,twitter_domain,Twitter
+  - RULE-SET,youtube_domain,YouTube
+  - RULE-SET,google_domain,Google
+  - RULE-SET,telegram_domain,Telegram
+  - RULE-SET,cn_domain,国内
+  - RULE-SET,openai_domain,OpenAI
+  - RULE-SET,microsoft_domain,Microsoft
+  - RULE-SET,geolocation-!cn,默认
+  - RULE-SET,gfw_domain,默认  
 
-  - GEOIP,google,🚀策略选择
-  - GEOIP,telegram,📲Telegram
-  - GEOIP,twitter,📄Twitter
-  - GEOIP,CN,🌐直连
-  - MATCH,🐟 漏网之鱼
+  - RULE-SET,google_ip,Google
+  - RULE-SET,telegram_ip,Telegram
+  - RULE-SET,twitter_ip,Twitter
+  - RULE-SET,cn_ip,国内
+
+  - GEOIP,lan,直连,no-resolve
+  - GEOSITE,github,Github
+  - GEOSITE,twitter,Twitter
+  - GEOSITE,youtube,YouTube
+  - GEOSITE,google,Google
+  - GEOSITE,telegram,Telegram
+  - GEOSITE,CN,国内
+  - GEOSITE,geolocation-!cn,默认
+
+  - GEOIP,google,Google
+  - GEOIP,telegram,Telegram
+  - GEOIP,twitter,Twitter
+  - GEOIP,CN,国内
+  - MATCH,其他
