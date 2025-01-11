@@ -302,7 +302,7 @@ rule-providers:
   pt:
     type: http
     interval: 86400
-    behavior: classical
+    behavior: domain
     format: text
     url: "https://raw.githubusercontent.com/goveeta/rules-config-file/refs/heads/main/config/Clash.Meta/rule/pt.list"   
 
