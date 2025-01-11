@@ -1,397 +1,445 @@
-#Clash莫离配置
-#配置地址：https://github.com/Moli-X/Resources/raw/main/Clash/Clash.yml
-# GitHub仓库地址：https://github.com/Moli-X  发现BUG请反馈: @GodMoliibot  
-# 相关频道: https://t.me/QuantX  
-# 相关群组：https://t.me/Skill_XX
-# 图标备用📮✉️📪📬💫💬💥🔨🥼🚫🔰🙈🍎🎬📺🎱🍐🐝🦁💡🌵🐯🎸💻📽🌏🕹📡🦑🌟🐷🦒🐳🚦📵🎧💊🔓🚦🚥🐼⛔️🈲🌐🎯🖲️🐦🔞🎵📱🚀💳♻️🙈🍱🔂📦🔀⏱
-
+# url 里填写自己的订阅,名称不能重复
+proxy-providers:
+  ProviderAirPort:
+    url: "订阅地址"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    
+proxies: 
+  - name: "🌐直连"
+    type: direct
 
 mixed-port: 7890
-allow-lan: false
-bind-address: '*'
-mode: rule
-log-level: info
+ipv6: false
+allow-lan: true
+unified-delay: false
+tcp-concurrent: true
 external-controller: 127.0.0.1:9090
-hosts:
-  'mtalk.google.com': 108.177.125.188
-  'dl.google.com': 180.163.151.161
-  'dl.l.google.com': 180.163.151.161
+external-ui: ui
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+keep-alive-interval: 1800
+
+geodata-mode: true
+geodata-loader: standard
+geo-auto-update: false
+geo-update-interval: 24
+geox-url:
+  geoip: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://cdn.jsdelivr.net/gh/soffchen/GeoIP2-CN@release/Country.mmdb"
+  asn: "https://mirror.ghproxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+
+find-process-mode: strict
+global-client-fingerprint: chrome
+
 profile:
-  store-selected: false
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  skip-domain:
+    - "Mijia Cloud"
+    - "+.push.apple.com"
+
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack:
+    - "any:53"
+    - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
 dns:
   enable: true
   ipv6: false
-  listen: 0.0.0.0:1053
-  use-hosts: true
-  default-nameserver: 
-   - 223.5.5.5
-   - 119.29.29.29
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
+  respect-rules: true
   fake-ip-filter:
-    - '*.lan'
-    - localhost.ptlogin2.qq.com
-    - '+.srv.nintendo.net'
-    - '+.stun.playstation.net'
-    - '+.msftconnecttest.com'
-    - '+.msftncsi.com'
-    - '+.xboxlive.com'
-    - 'msftconnecttest.com'
-    - 'xbox.*.microsoft.com'
-    - '*.battlenet.com.cn'
-    - '*.battlenet.com'
-    - '*.blzstatic.cn'
-    - '*.battle.net'
-    - '*.trendmicro.com'
-    - '*.deltaww.com'
-    - '*.microsoft.com'
-
-  nameserver: 
-    - 'https://doh.pub/dns-query'
-    - 'https://223.5.5.5/dns-query'
-  fallback: 
-    - 'https://doh.dns.sb/dns-query'
-    - 'https://1.1.1.1/dns-query'
-    - 'tls://8.8.4.4:853'
-  fallback-filter: 
-    geoip: true
-    geoip-code: CN
-
-
-proxies: null
-
-
-proxy-providers:
-# 把█████████████换成你的订阅链接
-  Subscribe:
-    type: http
-    url: 订阅地址
-    interval: 86400
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 1800
-      url: http://www.gstatic.com/generate_204
-  HKSub:
-    filter: 港|HK|(?i)Hong
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  TWSub:
-    filter: 台|TW|(?i)Taiwan
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  SGSub:
-    filter: 新|狮|獅|SG|(?i)Singapore
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  JPSub:
-    filter: 日|JP|(?i)Japan
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  USSub:
-    filter: 美|US|(?i)States|American
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
+    - "*"
+    - "+.lan"
+    - "+.local"
+    - "+.market.xiaomi.com"
+  nameserver:
+    - https://120.53.53.53/dns-query
+    - https://223.5.5.5/dns-query
+  proxy-server-nameserver:
+    - https://120.53.53.53/dns-query
+    - https://223.5.5.5/dns-query
+  nameserver-policy:
+    "rule-set:cn_domain,private_domain":
+      - https://120.53.53.53/dns-query
+      - https://223.5.5.5/dns-query
+    "rule-set:geolocation-!cn":
+      - "https://dns.cloudflare.com/dns-query"
+      - "https://dns.google/dns-query"
 
 proxy-groups:
-  - name: "全球服务"
+
+  - name: 🚀策略选择
+    type: select
+    proxies: [♻️自动,🇭🇰香港,🇹🇼台湾,🇸🇬新加坡,🇺🇸美国,🇩🇪德国,全部节点,🌐直连]
+  
+  # 策略组
+  - name: 🚀策略选择
+    type: select
+    proxies: [♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+
+# 兜底策略组
+  - name: 🐟漏网之鱼
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+
+# 专用策略组
+  - name: 🤖️人工智能
+    type: select
+    proxies: [🚀策略选择,🌐直连,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+
+# 下载服务
+  - name: 📦下载
+    type: select
+    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+
+# 苹果服务
+  - name: 🍎苹果服务
+    type: select
+    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+
+# 微软服务
+  - name: Ⓜ️微软服务
+    type: select
+    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+
+# 支付平台
+  - name: 💳Paypal
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+
+# 社交通讯平台
+  - name: 🐦Discord
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+  - name: 👤Facebook
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+  - name: 📖Reddit
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+  - name: 📲Telegram
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+  - name: 📄Twitter
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+
+# 娱乐平台
+  - name: 🎮全球游戏
+    type: select
+    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点]
+
+# 流媒体服务
+  - name: 🎬Disney+
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+  - name: 🎥Netflix
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+  - name: 📹YouTube
+    type: select
+    proxies: [🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国,全部节点,🌐直连]
+  - name: 📽BiliBili
+    type: select
+    proxies: [🌐直连,🚀策略选择,♻️自动,🇭🇰香港,🇸🇬新加坡,🇹🇼台湾,🇩🇪德国,🇺🇸美国]
+
+# 拒绝策略
+  - name: 🚫拒绝
+    type: select
+    proxies: [REJECT,REJECT-DROP]
+  - name: 🌐直连
+    type: select
+    proxies: [DIRECT]
+
+  #分隔,下面是地区分组
+  - name: 🇭🇰香港
     type: url-test
     use:
-      - Subscribe
-    url: 'http://www.gstatic.com/generate_204'
+      - ProviderAirPort
+    filter: "(?i)🇭🇰香港|hk|🇭🇰|香港"
+    url: 'http://www.apple.com/library/test/success.html'
     interval: 300
-
-  - name: "香港服务"
+    tolerance: 50
+    #lazy: true
+          
+  - name: 🇹🇼台湾
     type: url-test
     use:
-    - HKSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
+      - ProviderAirPort
+    filter: "🇹🇼台湾|tw|🇹🇼|台湾"
+    url: 'http://www.apple.com/library/test/success.html'
+    interval: 300
+    tolerance: 50
+    #lazy: true    
 
+  # - name: 日本
+  #   type: url-test
+  #   use:
+  #     - ProviderAirPort
+  #   filter: "(?i)日本|jp|japan"
+  #   url: 'http://www.apple.com/library/test/success.html'
+  #   interval: 300
+  #   tolerance: 50
+    #lazy: true    
 
-  - name: "台湾服务"
+  - name: 🇺🇸美国
     type: url-test
     use:
-    - TWSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
+      - ProviderAirPort
+    filter: "(?i)🇺🇸美国|us|🇺🇸|美国"
+    url: 'http://www.apple.com/library/test/success.html'
+    interval: 300
+    tolerance: 50
+    #lazy: true    
 
-
-  - name: "日本服务"
+  - name: 🇸🇬新加坡
     type: url-test
     use:
-    - JPSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-
-  - name: "美国服务"
+      - ProviderAirPort
+    filter: "(?i)(🇸🇬新加坡|sg|🇸🇬|新加坡)"
+    url: 'http://www.apple.com/library/test/success.html'
+    interval: 300
+    tolerance: 50
+    #lazy: true    
+    - name: 🇸🇬德国
     type: url-test
     use:
-    - USSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
+      - ProviderAirPort
+    filter: "(?i)(🇩🇪德国|de|🇩🇪|德国)"
+    url: 'http://www.apple.com/library/test/success.html'
+    interval: 300
+    tolerance: 50
+    
+  - name: 全部节点
+    type: select
+    include-all: true
 
-  - name: "新加坡服"
+  - name: ♻️自动
     type: url-test
-    use:
-    - SGSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
+    include-all: true
+    exclude-type: "direct"
+    url: 'http://www.apple.com/library/test/success.html'
+    interval: 300
+    tolerance: 10
 
+CN1:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_No_IPv6.list"
 
+CN2:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_Domain.list"
 
-  - name: "全球加速"
-    type: select
-    proxies:
-      - 全球服务
-      - 香港服务
-      - 美国服务
-      - 全国直连
-      - 台湾服务
-      - 日本服务
+Lan:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Lan/Lan.list"
 
-  - name: "人工智能"
-    type: select
-    proxies:
-      - 日本服务
-      - 美国服务
-      - 台湾服务
-      - 香港服务
-      - 全球服务
+Proxy1:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Proxy/Proxy.list"
 
-  - name: "中国媒体"
-    type: select
-    proxies:
-      - 全国直连
-      - 全球服务
-      - 香港服务
-      - 美国服务
+Proxy2:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Proxy/Proxy_Domain.list"
 
+Download:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Download/Download.list"
 
-  - name: "国际媒体"
-    type: select
-    proxies:
-      - 全球服务
-      - 香港服务
-      - 美国服务
-      - 全国直连
+ArtificialIntelligence:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/OpenAI/OpenAI.list"
 
-  - name: "微软服务"
-    type: select
-    proxies:
-      - 全国直连
-      - 全球服务
-      - 台湾服务
-      - 香港服务
+AppleServices1:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Apple/Apple.list"
 
+AppleServices2:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Apple/Apple_Domain.list"
 
-  - name: 全国直连
-    type: select
-    proxies:
-      - DIRECT
+Microsoft:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Microsoft/Microsoft.list"
 
-  - name: 拦截服务
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
+GoogleServices:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Google/Google.list"
 
-rule-providers:
+Paypal:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/PayPal/PayPal.list"
 
-  Direct:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Direct.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Direct/Direct.yaml
-    interval: 86400
+Discord:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Discord/Discord.list"
 
+Facebook:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Facebook/Facebook.list"
 
-  Lan:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Lan.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan.yaml
-    interval: 86400
+Reddit:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Reddit/Reddit.list"
 
-  Unbreak:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Unbreak.yaml
-    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Unbreak.yaml
-    interval: 86400
+Telegeam:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Telegram/Telegram.list"
 
-  OpenAI:
-    type: http
-    behavior: classical
-    path: ./RuleSet/OpenAI.yaml
-    url: "https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/OpenAI.yaml"
-    interval: 86400
+Twitter:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Twitter/Twitter.list"
 
-  Bing:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Bing.yaml
-    url: "https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Bing.yaml"
-    interval: 86400
+GlobalGames:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Game/Game.list"
 
-  Google:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Google.yaml
-    url: "https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Google.yaml"
-    interval: 86400
+YouTubeMusic:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/YouTubeMusic/YouTubeMusic.list"
 
-  Microsoft:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Microsoft.yaml
-    url: "https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Microsoft.yaml"
-    interval: 86400 
+Disney:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Disney/Disney.list"
 
-  Github:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Github.yaml
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/GitHub/GitHub.yaml"
-    interval: 86400
+Netflix:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Netflix/Netflix.list"
 
-  Video:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Video.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Video.yaml
-    interval: 86400
+Youtube:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/YouTube/YouTube.list"
 
-  Telegram:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Extra/Telegram/Telegram.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/Telegram/Telegram.yaml
-    interval: 86400
-
-  Streaming:
-    type: http
-    behavior: classical
-    path: ./RuleSet/StreamingMedia/Streaming.yaml
-    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/Streaming.yaml
-    interval: 86400
-
-  Discord:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Discord.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Discord.yaml
-    interval: 86400
-
-  Global:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Global.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Global.yaml
-    interval: 86400
-
-  China:
-    type: http
-    behavior: classical
-    path: ./RuleSet/China.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/China/China.yaml
-    interval: 86400
-
-  ChinaIP:
-    type: http
-    behavior: ipcidr
-    path: ./RuleSet/Extra/ChinaIP.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml
-    interval: 86400
-
-  Advertising:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Guard/Advertising.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml
-    interval: 86400
-
-
-  Privacy:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Guard/Privacy.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml
-    interval: 86400
-
-  HKlist:
-    type: http
-    behavior: classical
-    path: ./RuleSet/HKlist.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/HKlist.yaml
-    interval: 86400
-
-  Reject:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Reject.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Reject.yaml
-    interval: 86400
-
+BiliBili:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: text
+  url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.list"
 
 rules:
-  # > 应用分流
-  - PROCESS-NAME,lync.exe,DIRECT
-  - PROCESS-NAME,EXCEL.EXE,DIRECT
-  - PROCESS-NAME,WINWORD.EXE,DIRECT
-  - PROCESS-NAME,DIAInstaller.EXE,DIRECT
-  - PROCESS-NAME,Update.exe,DIRECT
-  - PROCESS-NAME,Microsoft Teams,DIRECT
-  
-  # > 小分流 Lan    - RULE-SET,Collection
-  - RULE-SET,Direct,DIRECT
-  - RULE-SET,Lan,DIRECT
-  - RULE-SET,Unbreak,DIRECT
-  - RULE-SET,Microsoft,微软服务
-  - RULE-SET,Video,中国媒体
-  - RULE-SET,Telegram,香港服务
-  - RULE-SET,Github,香港服务
-  - RULE-SET,OpenAI,人工智能
-  - RULE-SET,Bing,微软服务
-  - RULE-SET,Discord,全球加速
-  - RULE-SET,HKlist,香港服务
+  - RULE-SET,CN1,🌐直连
+  - RULE-SET,CN2,🌐直连
+  - RULE-SET,Lan,🌐直连
+  - RULE-SET,Proxy1,🚀策略选择
+  - RULE-SET,Proxy2,🚀策略选择
+  - RULE-SET,Download,📦下载
+  - RULE-SET,ArtificialIntelligence,🤖️人工智能
+  - RULE-SET,AppleServices1,🍎苹果服务
+  - RULE-SET,AppleServices2,🍎苹果服务
+  - RULE-SET,Microsoft,Ⓜ️微软服务
+  - RULE-SET,GoogleServices,🚀策略选择
+  - RULE-SET,Paypal,💳Paypal
+  - RULE-SET,Discord,🐦Discord
+  - RULE-SET,Facebook,👤Facebook
+  - RULE-SET,Reddit,📖Reddit
+  - RULE-SET,Telegeam,📲Telegram
+  - RULE-SET,Twitter,📄Twitter
+  - RULE-SET,GlobalGames,🎮全球游戏
+  - RULE-SET,YouTubeMusic,📹YouTube
+  - RULE-SET,Disney,🎬Disney+
+  - RULE-SET,Netflix,🎥Netflix
+  - RULE-SET,Youtube,📹YouTube
+  - RULE-SET,BiliBili,📽BiliBili
+  - MATCH,🐟漏网之鱼
 
-  # > 大分流
-  - RULE-SET,China,DIRECT
-  - RULE-SET,Global,全球加速
-  - RULE-SET,Google,全球加速
-  - RULE-SET,Streaming,国际媒体
+  - GEOIP,lan,🌐直连,no-resolve
+  - GEOSITE,github,🚀策略选择
+  - GEOSITE,twitter,📄Twitter
+  - GEOSITE,youtube,📹YouTube
+  - GEOSITE,google,🚀策略选择
+  - GEOSITE,telegram,📲Telegram
+  - GEOSITE,CN,🌐直连
+  - GEOSITE,geolocation-!cn,🐟漏网之鱼
 
-  # > 去广告REJECT
-  - RULE-SET,Advertising,REJECT
-  - RULE-SET,Privacy,REJECT
-  - RULE-SET,Reject,拦截服务
-
-  # > 单分流  - DOMAIN-SUFFIX, - DOMAIN-KEYWORD, ,no-resolve
-  - GEOIP,CN,DIRECT
-  - MATCH,全球加速
+  - GEOIP,google,🚀策略选择
+  - GEOIP,telegram,📲Telegram
+  - GEOIP,twitter,📄Twitter
+  - GEOIP,CN,🌐直连
