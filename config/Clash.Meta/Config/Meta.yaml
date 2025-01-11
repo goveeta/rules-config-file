@@ -248,154 +248,154 @@ CN1:
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_No_IPv6.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_No_IPv6.list"
 
 CN2:
   type: http
   interval: 86400
   behavior: domain
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_Domain.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_Domain.list"
 
 Lan:
   type: http
   interval: 86400
   behavior: domain
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Lan/Lan.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Lan/Lan.list"
 
 Proxy1:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Proxy/Proxy.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Proxy/Proxy.list"
 
 Proxy2:
   type: http
   interval: 86400
   behavior: domain
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Proxy/Proxy_Domain.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Proxy/Proxy_Domain.list"
 
 Download:
   type: http
   interval: 86400
   behavior: domain
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Download/Download.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Download/Download.list"
 
 ArtificialIntelligence:
   type: http
   interval: 86400
   behavior: domain
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/OpenAI/OpenAI.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/OpenAI/OpenAI.list"
 
 AppleServices1:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Apple/Apple.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Apple/Apple.list"
 
 AppleServices2:
   type: http
   interval: 86400
   behavior: domain
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Apple/Apple_Domain.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Apple/Apple_Domain.list"
 
 Microsoft:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Microsoft/Microsoft.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Microsoft/Microsoft.list"
 
 GoogleServices:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Google/Google.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Google/Google.list"
 
 Paypal:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/PayPal/PayPal.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/PayPal/PayPal.list"
 
 Discord:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Discord/Discord.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Discord/Discord.list"
 
 Facebook:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Facebook/Facebook.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Facebook/Facebook.list"
 
 Reddit:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Reddit/Reddit.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Reddit/Reddit.list"
 
 Telegeam:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Telegram/Telegram.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Telegram/Telegram.list"
 
 Twitter:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Twitter/Twitter.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Twitter/Twitter.list"
 
 GlobalGames:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Game/Game.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Game/Game.list"
 
 YouTubeMusic:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/YouTubeMusic/YouTubeMusic.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/YouTubeMusic/YouTubeMusic.list"
 
 Disney:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Disney/Disney.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Disney/Disney.list"
 
 Netflix:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/Netflix/Netflix.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Netflix/Netflix.list"
 
 Youtube:
   type: http
   interval: 86400
   behavior: ipcidr
   format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/YouTube/YouTube.list"
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/YouTube/YouTube.list"
 
 BiliBili:
   type: http
