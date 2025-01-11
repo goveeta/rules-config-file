@@ -309,7 +309,7 @@ rules:
   - RULE-SET,cn_domain,国内
   - RULE-SET,openai_domain,OpenAI
   - RULE-SET,microsoft_domain,Microsoft
-  - RULE-SET,geolocation-!cn,默认
+ # - RULE-SET,geolocation-!cn,默认
   - RULE-SET,gfw_domain,默认  
 
   - RULE-SET,google_ip,Google
