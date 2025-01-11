@@ -246,163 +246,163 @@ proxy-groups:
 CN1:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_No_IPv6.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_No_IPv6.yaml"
 
 CN2:
   type: http
   interval: 86400
-  behavior: domain
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_Domain.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_Domain.yaml"
 
 Lan:
   type: http
   interval: 86400
-  behavior: domain
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Lan/Lan.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Lan/Lan.yaml"
 
 Proxy1:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Proxy/Proxy.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Proxy/Proxy.yaml"
 
 Proxy2:
   type: http
   interval: 86400
-  behavior: domain
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Proxy/Proxy_Domain.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Proxy/Proxy_Domain.yaml"
 
 Download:
   type: http
   interval: 86400
-  behavior: domain
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Download/Download.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Download/Download.yaml"
 
 ArtificialIntelligence:
   type: http
   interval: 86400
-  behavior: domain
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/OpenAI/OpenAI.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/OpenAI/OpenAI.yaml"
 
 AppleServices1:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Apple/Apple.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Apple/Apple.yaml"
 
 AppleServices2:
   type: http
   interval: 86400
-  behavior: domain
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Apple/Apple_Domain.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Apple/Apple_Domain.yaml"
 
 Microsoft:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Microsoft/Microsoft.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Microsoft/Microsoft.yaml"
 
 GoogleServices:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Google/Google.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Google/Google.yaml"
 
 Paypal:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/PayPal/PayPal.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/PayPal/PayPal.yaml"
 
 Discord:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Discord/Discord.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Discord/Discord.yaml"
 
 Facebook:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Facebook/Facebook.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Facebook/Facebook.yaml"
 
 Reddit:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Reddit/Reddit.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Reddit/Reddit.yaml"
 
 Telegeam:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Telegram/Telegram.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Telegram/Telegram.yaml"
 
 Twitter:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Twitter/Twitter.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Twitter/Twitter.yaml"
 
 GlobalGames:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Game/Game.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Game/Game.yaml"
 
 YouTubeMusic:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/YouTubeMusic/YouTubeMusic.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/YouTubeMusic/YouTubeMusic.yaml"
 
 Disney:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Disney/Disney.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Disney/Disney.yaml"
 
 Netflix:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Netflix/Netflix.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/Netflix/Netflix.yaml"
 
 Youtube:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Loon/YouTube/YouTube.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/goveeta/rules/refs/heads/master/rule/Clash/YouTube/YouTube.yaml"
 
 BiliBili:
   type: http
   interval: 86400
-  behavior: ipcidr
-  format: text
-  url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.list"
+  behavior: classical
+  format: yaml
+  url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"
 
 rules:
   - RULE-SET,CN1,🌐直连
