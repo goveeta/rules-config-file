@@ -18,7 +18,8 @@ proxy-providers:
     override:
       additional-prefix: "[聚合订阅]" # 为订阅节点添加机场名称前缀
   
-  
+external-ui: ui
+external-ui-url: 'https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip'
   # 机场4:
   #   url: ""
   #   <<: *NodeParam
