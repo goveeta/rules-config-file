@@ -304,7 +304,7 @@ rule-providers:
     interval: 86400
     behavior: domain
     format: text
-    url: "https://raw.githubusercontent.com/goveeta/rules-config-file/refs/heads/main/config/Clash.Meta/rule/pt.list"   
+    url: "https://raw.githubusercontent.com/goveeta/rules-config-file/refs/heads/main/config/Clash.Meta/rule/pt_domain.list"   
 
 rules:
 
