@@ -181,16 +181,16 @@ proxy-groups:
     interval: 300
     tolerance: 50
     #lazy: true    
-    
+
   - name: 马来西亚
     type: url-test
     use:
       - ProviderAirPort
-    filter: "(?i)(马来西亚|my|马来)"
+    filter: "(?i)(马来|my|马来西亚)"
     url: 'http://www.apple.com/library/test/success.html'
     interval: 300
     tolerance: 50
-    #lazy: true  
+    #lazy: true    
 
   - name: 全部节点
     type: select
